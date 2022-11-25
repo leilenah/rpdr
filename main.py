@@ -20,8 +20,6 @@ def get_contestants(seasons, winners_only=False, exclude_winners=False):
         season_episode_count = season["episode count"]
         for contestant in contestants:
             bottom_count = contestant["bottom two"] + (season_episode_count - contestant["episode count"])
-
-
             contestant["season episode count"] = season_episode_count
             contestant["bottom count"] = bottom_count
 
@@ -56,8 +54,6 @@ def get_p_performance(
     if (len(matches) == 0):
         return EPSILON
     return len(matches) / len(contestant_data)
-
-
 
 
 
