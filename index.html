@@ -12,9 +12,6 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
         <!-- Math Jax -->
-        <!-- <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-        </script> -->
         <script type="text/javascript">
             MathJax = {
             config: ["MMLorHTML.js"],
@@ -43,12 +40,12 @@
 </head>
     <body>
 
-        <p><b>Bernoulli Random Variable</b></p>
+        <p><b>Must Be Jelly 'Cause Jam Don't Shake Random Variable</b></p>
 
         <table>
             <tr>
                 <th style="width:150px">Notation:</td>
-                <td>$X \sim$ Bern$(p)$</td>
+                <td>$X \sim$ Jelly$(p)$</td>
             </tr>
             <tr>
                 <th>Description:</td>
@@ -84,10 +81,10 @@
                 <th>PMF graph:</th>
             </tr>
         </table>
-        Parameter $a$: <input onchange="redrawBernoulliPmf()" type="number" class="form-control example-inline-input mb-3" id="pmfA" min="0" max="1" value="0.80" step = "0.05">
-        Parameter $b$: <input onchange="redrawBernoulliPmf()" type="number" class="form-control example-inline-input mb-3" id="pmfB" min="0" max="1" value="0.80" step = "0.05">
-        Parameter $c$: <input onchange="redrawBernoulliPmf()" type="number" class="form-control example-inline-input mb-3" id="pmfC" min="0" max="1" value="0.80" step = "0.05">
-        Parameter $d$: <input onchange="redrawBernoulliPmf()" type="number" class="form-control example-inline-input mb-3" id="pmfD" min="0" max="1" value="0.80" step = "0.05">
+        Parameter $a$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfA" min="0" value="11" step = "1">
+        Parameter $b$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfB" min="0" value="3" step = "1">
+        Parameter $c$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfC" min="0" value="1" step = "1">
+        Parameter $d$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfD" min="0" value="3" step = "1">
         <canvas id="bernoulliPmf" style="max-height: 400px"></canvas>
     </body>
 </html>

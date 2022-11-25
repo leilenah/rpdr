@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	redrawBernoulliPmf()
-    console.log(rpdr_seasons_data)
 })
 
 function redrawBernoulliPmf() {
@@ -9,12 +8,92 @@ function redrawBernoulliPmf() {
     const b = parseFloat($('#pmfB').val())
     const c = parseFloat($('#pmfC').val())
     const d = parseFloat($('#pmfD').val())
-	const p = getP(a, b, c, d)
+	const p = getPWinGivenPerformance(a, b, c, d);
+
+    console.log(p);
+
+
 	drawBernoulliPmf(parentDivId, p)
 }
 
-function getP(episodeCount, episodeWinCount, episodeBottomCount, contestantsRemainingCount) {
-    return 0.60
+function getPWinGivenPerformance(
+    episodeCount,
+    episodeWinCount,
+    episodeBottomCount,
+    contestantsRemainingCount,
+) {
+    const winners = getContestants(rpdr_seasons_data, 'winners')
+    const losers = getContestants(rpdr_seasons_data, 'losers')
+    const pWin = 1 / contestantsRemainingCount;
+    const pLose = 1 - pWin;
+    const pPerformanceGivenWin = getPPerformance(
+        winners,
+        episodeCount,
+        episodeWinCount,
+        episodeBottomCount,
+    );
+    const pPerformanceGivenLose = getPPerformance(
+        losers,
+        episodeCount,
+        episodeWinCount,
+        episodeBottomCount,
+    )
+
+    const bayesNumerator = pPerformanceGivenWin * pWin;
+    const bayesDenominator = bayesNumerator + (pPerformanceGivenLose * pLose);
+
+    return bayesNumerator / bayesDenominator;
+}
+
+function getPPerformance(
+    contestants,
+    episodeCount,
+    episodeWinCount,
+    episodeBottomCount,
+) {
+    const winRatio = episodeWinCount / episodeCount;
+    const bottomRatio = episodeBottomCount / episodeCount;
+    const matches = []
+
+    for (const contestant of contestants) {
+        const contestantWinRatio = contestant["challenge wins"] / contestant["season episode count"];
+        const contestantBottomRatio = contestant["bottom count"] / contestant["season episode count"];
+
+        if (contestantWinRatio <= winRatio && contestantBottomRatio <= bottomRatio) {
+            matches.push(contestant)
+        }
+    }
+
+    if (matches.length == 0) {
+        return Number.EPSILON
+    }
+    return matches.length / contestants.length
+}
+
+function getContestants(data, type) {
+    const result = [];
+    for (const season of data) {
+        const contestants = season["contestants"];
+        const seasonEpisodeCount = season["episode count"]
+
+        for (const contestant of contestants) {
+            contestant["season episode count"] = seasonEpisodeCount;
+            contestant["bottom count"] = contestant["bottom two"] + (seasonEpisodeCount - contestant["episode count"])
+
+            if (type == 'winners') {
+                if (contestant["won season"]) {
+                    result.push(contestant)
+                }
+            } else if (type == 'losers') {
+                if (!contestant["won season"]) {
+                    result.push(contestant)
+                }
+            } else {
+                result.push(contestant)
+            }
+        }
+    }
+    return result
 }
 
 function drawBernoulliPmf(parentDivId, p) {
