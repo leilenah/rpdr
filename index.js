@@ -4,15 +4,14 @@ $(document).ready(function(){
 
 function redrawBernoulliPmf() {
 	const parentDivId = 'bernoulliPmf'
-    const a = parseFloat($('#pmfA').val())
-    const b = parseFloat($('#pmfB').val())
-    const c = parseFloat($('#pmfC').val())
     const d = parseFloat($('#pmfD').val())
-	const p = getPWinGivenPerformance(a, b, c, d);
+    const r = parseFloat($('#pmfR').val())
+    const a = parseFloat($('#pmfA').val())
+    const g = parseFloat($('#pmfG').val())
+	const p = getPWinGivenPerformance(d, r, a, g);
+    const roundedP = Number((p).toFixed(5)).toString();
 
-    console.log(p);
-
-
+    document.getElementById('dynamic-p').innerHTML =  roundedP;
 	drawBernoulliPmf(parentDivId, p)
 }
 
@@ -38,10 +37,8 @@ function getPWinGivenPerformance(
         episodeWinCount,
         episodeBottomCount,
     )
-
     const bayesNumerator = pPerformanceGivenWin * pWin;
     const bayesDenominator = bayesNumerator + (pPerformanceGivenLose * pLose);
-
     return bayesNumerator / bayesDenominator;
 }
 
