@@ -136,21 +136,33 @@ function drawBernoulliPmf(parentDivId, p) {
 					display: true,
 					scaleLabel: {
 						display: true,
-						labelString: xLabel
-					}
+						labelString: xLabel,
+                        fontColor: '#ff9999',
+                        fontFamily: 'Turret Road',
+                        fontSize: 14,
+					},
+                    ticks: {
+                        fontColor: '#ff9999',
+                        fontFamily: 'Turret Road',
+                    },
 				}],
 				yAxes: [{
 					display: true,
 					scaleLabel: {
 						display: true,
-						labelString: yLabel
+						labelString: yLabel,
+                        fontColor: '#ff9999',
+                        fontFamily: 'Turret Road',
+                        fontSize: 14,
 					},
 					ticks: {
+                        fontColor: '#ff9999',
+                        fontFamily: 'Turret Road',
                         beginAtZero: true,
                         steps: 10,
                         stepValue: 0.1,
-                        max: 1.0
-                    }
+                        max: 1.0,
+                    },
 				}]
 			}
 		}

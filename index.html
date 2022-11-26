@@ -49,7 +49,7 @@
             <table>
                 <tr>
                     <th style="width:150px">Notation:</td>
-                    <td>$X \sim Win(d, r, a, g)$</td>
+                    <td>$X \sim $<span class="tnr">Win</span>$(d, r, a, g)$</td>
                 </tr>
                 <tr>
                     <th>Description:</td>
@@ -67,7 +67,7 @@
                 <tr>
                     <th>Dynamic p:</th>
                     <td>
-                        $p = $ <span id="dynamic-p"></span>
+                        $p = $ <span id="dynamic-p" class="tnr"></span>
                     </td>
                 </tr>
                 <tr>
@@ -77,7 +77,7 @@
                 <tr>
                     <th>PMF Equation:</th>
                     <td>
-                        $P(X=x) =
+                        <span class="tnr">P</span>$(X=x) =
                             \begin{cases}
                                 p && \text{if }x = 1\\
                                 1-p && \text{if }x = 0
@@ -86,11 +86,11 @@
                 </tr>
                 <tr>
                     <th>Expectation:</th>
-                    <td>$E[X] = p$</td>
+                    <td><span class="tnr">E</span>$[X] = p$</td>
                 </tr>
                 <tr>
                     <th>Variance:</th>
-                    <td>$Var(X) = p (1-p)$</td>
+                    <td><span class="tnr">Var</span>$(X) = p (1-p)$</td>
                 </tr>
                 <tr>
                     <th>PMF graph:</th>
@@ -104,7 +104,9 @@
                 Parameter $g$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfG" min="1" value="3" step = "1">
             </div>
 
-            <canvas id="bernoulliPmf" style="max-height: 400px"></canvas>
+            <div class="canvas-container">
+                <canvas id="bernoulliPmf" style="max-height: 400px"></canvas>
+            </div>
         </div>
 
     </body>
