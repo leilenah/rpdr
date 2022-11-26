@@ -110,15 +110,14 @@ function drawBernoulliPmf(parentDivId, p) {
 			datasets: [{
 				label: 'P(x)',
 				fill: false,
-				backgroundColor: 'pink',
-				borderColor: 'pink',
+				backgroundColor: '#80dfff',
+				borderColor: '#80dfff',
 				data: yValues,
 				pointRadius:1,
 				maxBarThickness:100
 			}]
 		},
 		options: {
-
 			steppedLine: false,
 			responsive: true,
 			tooltips: {

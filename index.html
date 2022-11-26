@@ -11,6 +11,11 @@
         <!-- Chart CDN -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@300;500&display=swap" rel="stylesheet">
+
         <!-- Math Jax -->
         <script type="text/javascript">
             MathJax = {
@@ -39,63 +44,68 @@
         <script src="index.js"></script>
 </head>
     <body>
+        <div class="rv-container">
+            <h2>You're a Winner, Baby Random Variable</h2>
+            <table>
+                <tr>
+                    <th style="width:150px">Notation:</td>
+                    <td>$X \sim Win(d, r, a, g)$</td>
+                </tr>
+                <tr>
+                    <th>Description:</td>
+                    <td>A boolean variable that is 1 with probability $p$, which is dynamically generated using $d,r,a,g$.</td>
+                </tr>
+                <tr>
+                    <th>Parameters:</td>
+                    <td>
+                        $d$ - number of episodes. <br/>
+                        $r$ - number of episodes contestant has won. <br/>
+                        $a$ - number of episodes contestant placed bottom two. <br/>
+                        $g$ - number of contestants remaining.
+                    </td>
+                </tr>
+                <tr>
+                    <th>Dynamic p:</th>
+                    <td>
+                        $p = $ <span id="dynamic-p"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Support:</td>
+                    <td>$x \in \{0, 1\}$</td>
+                </tr>
+                <tr>
+                    <th>PMF Equation:</th>
+                    <td>
+                        $P(X=x) =
+                            \begin{cases}
+                                p && \text{if }x = 1\\
+                                1-p && \text{if }x = 0
+                            \end{cases}$
+                    </td>
+                </tr>
+                <tr>
+                    <th>Expectation:</th>
+                    <td>$E[X] = p$</td>
+                </tr>
+                <tr>
+                    <th>Variance:</th>
+                    <td>$Var(X) = p (1-p)$</td>
+                </tr>
+                <tr>
+                    <th>PMF graph:</th>
+                </tr>
+            </table>
 
-        <p><b>You're a Winner, Baby Random Variable</b></p>
+            <div class="param-inputs">
+                Parameter $d$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfD" min="0" value="11" step = "1">
+                Parameter $r$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfR" min="0" value="3" step = "1">
+                Parameter $a$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfA" min="0" value="1" step = "1">
+                Parameter $g$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfG" min="1" value="3" step = "1">
+            </div>
 
-        <table>
-            <tr>
-                <th style="width:150px">Notation:</td>
-                <td>$X \sim$ Win$(d, r, a, g)$</td>
-            </tr>
-            <tr>
-                <th>Description:</td>
-                <td>A boolean variable that is 1 with probability $p$ determined by $d,r,a,g$.</td>
-            </tr>
-            <tr>
-                <th>Parameters:</td>
-                <td>
-                    $d$ - the number of season episodes that have occured. <br/>
-                    $r$ - the number of episodes that the contestant has won. <br/>
-                    $a$ - the number of episodes in which the contestant placed in the bottom two. <br/>
-                    $g$ - the number of contestants left in the competition.
-                </td>
-            </tr>
-            <tr>
-                <th>Dynamic p:</th>
-                <td>
-                    $p = $ <span id="dynamic-p"></span>
-                </td>
-            </tr>
-            <tr>
-                <th>Support:</td>
-                <td>$x \in \{0, 1\}$</td>
-            </tr>
-            <tr>
-                <th>PMF Equation:</th>
-                <td>
-                    P$(X=x) =
-                        \begin{cases}
-                            p && \text{if }x = 1\\
-                            1-p && \text{if }x = 0
-                        \end{cases}$
-                </td>
-            </tr>
-            <tr>
-                <th>Expectation:</th>
-                <td>E$[X] = p$</td>
-            </tr>
-            <tr>
-                <th>Variance:</th>
-                <td>Var$(X) = p (1-p)$</td>
-            </tr>
-            <tr>
-                <th>PMF graph:</th>
-            </tr>
-        </table>
-        Parameter $d$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfD" min="0" value="11" step = "1">
-        Parameter $r$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfR" min="0" value="3" step = "1">
-        Parameter $a$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfA" min="0" value="1" step = "1">
-        Parameter $g$: <input onchange="redrawBernoulliPmf()" type="number" id="pmfG" min="1" value="3" step = "1">
-        <canvas id="bernoulliPmf" style="max-height: 400px"></canvas>
+            <canvas id="bernoulliPmf" style="max-height: 400px"></canvas>
+        </div>
+
     </body>
 </html>
