@@ -1,5 +1,3 @@
-// TODO: add more seasons
-
 const rpdr_seasons_data = [
     {
         "season": 1,
@@ -987,7 +985,7 @@ const rpdr_seasons_data = [
     {
         "season": 10,
         "country": "US",
-        "episode count": 14,
+        "episode count": 13,
         "contestants": [
             {
                 "name": "Aquaria",
@@ -995,7 +993,7 @@ const rpdr_seasons_data = [
                 "in finale": 1,
                 "challenge wins": 3,
                 "bottom two": 0,
-                "episode count": 14,
+                "episode count": 13,
             },
             {
                 "name": "Eureka",
@@ -1003,7 +1001,7 @@ const rpdr_seasons_data = [
                 "in finale": 1,
                 "challenge wins": 2,
                 "bottom two": 2,
-                "episode count": 14,
+                "episode count": 13,
             },
             {
                 "name": "Kameron Michaels",
@@ -1011,7 +1009,7 @@ const rpdr_seasons_data = [
                 "in finale": 1,
                 "challenge wins": 1,
                 "bottom two": 3,
-                "episode count": 14,
+                "episode count": 13,
             },
             {
                 "name": "Asia O'Hara",
@@ -1019,7 +1017,7 @@ const rpdr_seasons_data = [
                 "in finale": 1,
                 "challenge wins": 2,
                 "bottom two": 1,
-                "episode count": 14,
+                "episode count": 13,
             },
             {
                 "name": "Miz Cracker",
@@ -1570,5 +1568,211 @@ const rpdr_seasons_data = [
                 "episode count": 2,
             }
         ]
-    }
+    },
+    {
+        "season": 1,
+        "country": "UK",
+        "episode count": 8,
+        "contestants": [
+            {
+                "name": "The Vivienne",
+                "won season": 1,
+                "in finale": 1,
+                "challenge wins": 3,
+                "bottom two": 1,
+                "episode count": 8,
+            },
+            {
+                "name": "Divina de Campo",
+                "won season": 0,
+                "in finale": 1,
+                "challenge wins": 3,
+                "bottom two": 0,
+                "episode count": 8,
+            },
+            {
+                "name": "Baga Chipz",
+                "won season": 0,
+                "in finale": 1,
+                "challenge wins": 3,
+                "bottom two": 1,
+                "episode count": 8,
+            },
+            {
+                "name": "Cheryl Hole",
+                "won season": 0,
+                "in finale": 0,
+                "challenge wins": 0,
+                "bottom two": 2,
+                "episode count": 7,
+            },
+            {
+                "name": "Blu Hydrangea",
+                "won season": 0,
+                "in finale": 0,
+                "challenge wins": 1,
+                "bottom two": 2,
+                "episode count": 6,
+            },
+            {
+                "name": "Crystal",
+                "won season": 0,
+                "in finale": 0,
+                "challenge wins": 0,
+                "bottom two": 2,
+                "episode count": 5,
+            },
+            {
+                "name": "Sum Ting Wong",
+                "won season": 0,
+                "in finale": 0,
+                "challenge wins": 0,
+                "bottom two": 2,
+                "episode count": 4,
+            },
+            {
+                "name": "Vinegar Strokes",
+                "won season": 0,
+                "in finale": 0,
+                "challenge wins": 0,
+                "bottom two": 2,
+                "episode count": 3,
+            },
+            {
+                "name": "Scaredy Kat",
+                "won season": 0,
+                "in finale": 0,
+                "challenge wins": 0,
+                "bottom two": 1,
+                "episode count": 2,
+            },
+            {
+                "name": "Gothy Kendoll",
+                "won season": 0,
+                "in finale": 0,
+                "challenge wins": 0,
+                "bottom two": 1,
+                "episode count": 1,
+            },
+        ]
+    },
+    // {
+    //     "season": 2,
+    //     "country": "UK",
+    //     "episode count": 10,
+    //     "contestants": [
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //     ]
+    // },
 ]
+
+    // {
+    //     "season": ,
+    //     "country": "",
+    //     "episode count": ,
+    //     "contestants": [
+    //         {
+    //             "name": "",
+    //             "won season": ,
+    //             "in finale": ,
+    //             "challenge wins": ,
+    //             "bottom two": ,
+    //             "episode count": ,
+    //         },
+    //     ]
+    // },

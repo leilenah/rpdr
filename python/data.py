@@ -985,7 +985,7 @@ rpdr_seasons_data = [
     {
         "season": 10,
         "country": "US",
-        "episode count": 14,
+        "episode count": 13,
         "contestants": [
             {
                 "name": "Aquaria",
@@ -993,7 +993,7 @@ rpdr_seasons_data = [
                 "in finale": 1,
                 "challenge wins": 3,
                 "bottom two": 0,
-                "episode count": 14,
+                "episode count": 13,
             },
             {
                 "name": "Eureka",
@@ -1001,7 +1001,7 @@ rpdr_seasons_data = [
                 "in finale": 1,
                 "challenge wins": 2,
                 "bottom two": 2,
-                "episode count": 14,
+                "episode count": 13,
             },
             {
                 "name": "Kameron Michaels",
@@ -1009,7 +1009,7 @@ rpdr_seasons_data = [
                 "in finale": 1,
                 "challenge wins": 1,
                 "bottom two": 3,
-                "episode count": 14,
+                "episode count": 13,
             },
             {
                 "name": "Asia O'Hara",
@@ -1017,7 +1017,7 @@ rpdr_seasons_data = [
                 "in finale": 1,
                 "challenge wins": 2,
                 "bottom two": 1,
-                "episode count": 14,
+                "episode count": 13,
             },
             {
                 "name": "Miz Cracker",
