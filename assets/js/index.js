@@ -5,10 +5,8 @@ $(document).ready(function(){
 
 
 function evaluate() {
-    const winners = getContestants(rpdr_seasons_data, 'winners');
-    const losers = getContestants(rpdr_seasons_data, 'losers');
-
-    console.log(winners);
+    // const winners = getContestants(rpdr_seasons_data, 'winners');
+    // const losers = getContestants(rpdr_seasons_data, 'losers');
 }
 
 
