@@ -5,6 +5,10 @@ $(document).ready(function(){
 
 
 function evaluate() {
+    const winners = getContestants(rpdr_seasons_data, 'winners');
+    const losers = getContestants(rpdr_seasons_data, 'losers');
+
+    console.log(winners);
 }
 
 
@@ -47,6 +51,7 @@ function getPWinGivenPerformance(
 
     const bayesNumerator = pPerformanceGivenWin * pWin;
     const bayesDenominator = bayesNumerator + (pPerformanceGivenLose * pLose);
+
     return bayesNumerator / bayesDenominator;
 }
 
@@ -82,7 +87,7 @@ function getContestants(data, type) {
     for (const season of data) {
         const contestants = season["contestants"];
         const seasonEpisodeCount = season["episode count"]
-        const normalizedEpisodeCount = seasonEpisodeCount - 1;
+        const normalizedEpisodeCount = seasonEpisodeCount - 1;  // exclude finale
 
         for (const contestant of contestants) {
             contestant["normalized episode count"] = normalizedEpisodeCount;
