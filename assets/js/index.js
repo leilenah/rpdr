@@ -5,6 +5,7 @@ $(document).ready(function(){
 
 
 function evaluate() {
+    // const contestants = getContestants(rpdr_seasons_data);
     // const winners = getContestants(rpdr_seasons_data, 'winners');
     // const losers = getContestants(rpdr_seasons_data, 'losers');
 }
@@ -49,7 +50,6 @@ function getPWinGivenPerformance(
 
     const bayesNumerator = pPerformanceGivenWin * pWin;
     const bayesDenominator = bayesNumerator + (pPerformanceGivenLose * pLose);
-
     return bayesNumerator / bayesDenominator;
 }
 
@@ -62,16 +62,21 @@ function getPPerformance(
 ) {
     const netWins = episodeWinCount - episodeBottomCount;
     const netWinRatio = netWins / episodeCount;
+    const netWinRatioMin = netWinRatio - 0.05;
+    const netWinRatioMax = netWinRatio + 0.05;
     const matches = []
 
     for (const contestant of contestants) {
         const contestantNetWins = contestant["challenge wins"] - contestant["normalized bottom count"];
         const contestantNetWinRatio = contestantNetWins / contestant["normalized episode count"];
+        const meetsMin = contestantNetWinRatio > netWinRatioMin;
+        const meetsMax = contestantNetWinRatio < netWinRatioMax;
 
-        if (contestantNetWinRatio <= netWinRatio) {
+        if (meetsMin && meetsMax) {
             matches.push(contestant)
         }
     }
+
     if (matches.length == 0) {
         return Number.EPSILON
     }
