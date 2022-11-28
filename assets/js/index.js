@@ -60,19 +60,18 @@ function getPPerformance(
     episodeWinCount,
     episodeBottomCount,
 ) {
-    const winRatio = episodeWinCount / episodeCount;
-    const bottomRatio = episodeBottomCount / episodeCount;
+    const netWins = episodeWinCount - episodeBottomCount;
+    const netWinRatio = netWins / episodeCount;
     const matches = []
 
     for (const contestant of contestants) {
-        const contestantWinRatio = contestant["challenge wins"] / contestant["normalized episode count"];
-        const contestantBottomRatio = contestant["normalized bottom count"] / contestant["normalized episode count"];
+        const contestantNetWins = contestant["challenge wins"] - contestant["normalized bottom count"];
+        const contestantNetWinRatio = contestantNetWins / contestant["normalized episode count"];
 
-        if (contestantWinRatio <= winRatio && contestantBottomRatio <= bottomRatio) {
+        if (contestantNetWinRatio <= netWinRatio) {
             matches.push(contestant)
         }
     }
-
     if (matches.length == 0) {
         return Number.EPSILON
     }
