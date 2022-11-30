@@ -54,6 +54,11 @@ function getPWinGivenPerformance(
 }
 
 
+function round(num) {
+    return Number((num).toFixed(1));
+}
+
+
 function getPPerformance(
     contestants,
     episodeCount,
@@ -62,17 +67,12 @@ function getPPerformance(
 ) {
     const netWins = episodeWinCount - episodeBottomCount;
     const netWinRatio = netWins / episodeCount;
-    const netWinRatioMin = netWinRatio - 0.05;
-    const netWinRatioMax = netWinRatio + 0.05;
     const matches = []
 
     for (const contestant of contestants) {
         const contestantNetWins = contestant["challenge wins"] - contestant["normalized bottom count"];
         const contestantNetWinRatio = contestantNetWins / contestant["normalized episode count"];
-        const meetsMin = contestantNetWinRatio > netWinRatioMin;
-        const meetsMax = contestantNetWinRatio < netWinRatioMax;
-
-        if (meetsMin && meetsMax) {
+        if (round(netWinRatio) == round(contestantNetWinRatio)) {
             matches.push(contestant)
         }
     }
